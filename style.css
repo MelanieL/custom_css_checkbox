@@ -1,0 +1,58 @@
+body {
+    font-size: 18px;
+}
+
+/* Breathing room for the checkbox option */
+.checkboxDiv {
+    margin: 10px 0;
+}
+
+/* A call to action pointer, not necessary but nice for UX */
+.checkbox-label {
+    cursor: pointer;
+}
+
+/* Breathing room for the text label */
+.checkText {
+    margin-left: 5px;
+}
+
+/* This hides the default box but still makes it accessible to toggle */
+.checkbox-label input {
+    /* Make it invisible */
+    opacity: 0;
+    /* Make sure it doesn't take up any layout space */
+    position: absolute;
+}
+
+/* Unchecked state - makes the new box */
+.checkbox-label .checkbox-custom {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 24px;
+    width: 24px;
+    background: black;
+    /* position: relative; */
+    display: inline-block;
+    /* DIB needed so that we can set the width */
+}
+
+/* Unchecked state - makes the check */
+.checkbox-label .checkbox-custom::after {
+    content: "✓";
+    opacity: 0;
+    position: relative;
+}
+
+/* Checked state - chages the box */
+.checkbox-label input:checked ~.checkbox-custom {
+    background-color: white;
+}
+
+/* Checked state - changes the check */
+.checkbox-label input:checked ~.checkbox-custom::after {
+    color: black;
+    opacity: 1;
+    left: 6px;
+    top: 2px;
+}
