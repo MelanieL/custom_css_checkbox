@@ -1,9 +1,11 @@
+/* CSS - Step 1 */
 /* Make default checkbox invisible */
 .checkbox-label input {
     opacity: 0;
     position: absolute;
 }
 
+/* CSS - Step 2 */
 /* Unchecked state - makes the new box */
 .checkbox-label .checkbox-custom {
     background: black;
@@ -15,17 +17,20 @@
     width: 16px;
 }
 
+/* CSS - Step 3 */
 /* Unchecked state - makes the check */
 .checkbox-label .checkbox-custom::after {
     content: "✓";
     opacity: 0;
 }
 
+/* CSS - Step 4 */
 /* Checked state - chages the box */
 .checkbox-label input:checked ~.checkbox-custom {
     background-color: white;
 }
 
+/* CSS - Step 5 */
 /* Checked state - changes the check */
 .checkbox-label input:checked ~.checkbox-custom::after {
     color: black;
